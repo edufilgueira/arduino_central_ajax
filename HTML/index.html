@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Arduino com AJAX</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+		<script src="js/jquery.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<style type="text/css">
+			.clean { padding: 0; margin: 0;}
+			.row {border:solid #000 1px}
+		</style>
+	</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 well">
+			<p>
+				Temperatura: <span id="temperatura1">0</span><span>ºC</span>
+				<h4>Botões</h4>
+				Pino1:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="00" value="ON">Liga</a>
+				</div><br/>
+				Pino2:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="01" value="ON">Liga</a>
+				</div><br/>
+				Pino3:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="02" value="ON">Liga</a>
+				</div><br/>
+				Pino4:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="03" value="ON">Liga</a>
+				</div><br/>
+				Pino5:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="04" value="ON">Liga</a>
+				</div><br/>
+				Pino6:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="05" value="ON">Liga</a>
+				</div><br/>
+				Pino7:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="06" value="ON">Liga</a>
+				</div><br/>
+				Pino8:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="07" value="ON">Liga</a>
+				</div><br/>
+				Pino9:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="08" value="ON">Liga</a>
+				</div><br/>
+				Pino10:
+				<div class="btn-group">
+				  <a class="btn btn-default botaoEnvia" id="09" value="ON">Liga</a>
+				</div><br/>
+			</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+//var url = 'http://177.177.165.14:50';
+var url = 'http://192.168.0.20:1000';
+
+
+$(document).ready(function(){
+	$('.botaoEnvia').click(function(){
+        var pino  = $(this).attr('id');
+        var valor = $(this).attr('value');
+		enviaDados(pino+valor);
+		console.log("pino:"+pino+" valor:"+valor);
+		if(valor == "ON")
+		{
+			$(this).attr('value','OF');
+			$(this).text(statusReturn(pino));
+		}
+		else if(valor == "OF")
+		{
+			$(this).attr('value','ON');
+			$(this).text(statusReturn(pino));
+		}
+    });
+	
+	function enviaDados(dado){		
+    	$.ajax({
+		    url: url,
+		    data: { 'acao': dado},
+		    dataType: 'jsonp',
+		    crossDomain: true,
+		    jsonp: false,
+		    jsonpCallback: 'dados',
+		    success: function(data,status,xhr) {
+				// posso ler dados e retoranar na pagina para avisar se a luz ta ligada ou desligada.
+				$('#00').text(statusReturn(data._pino0));
+				$('#01').text(statusReturn(data._pino1)); 
+				$('#02').text(statusReturn(data._pino2));
+				$('#03').text(statusReturn(data._pino3)); 
+				$('#04').text(statusReturn(data._pino4)); 
+				$('#05').text(statusReturn(data._pino5)); 
+				$('#06').text(statusReturn(data._pino6)); 
+				$('#07').text(statusReturn(data._pino7)); 
+				$('#08').text(statusReturn(data._pino8)); 
+				$('#09').text(statusReturn(data._pino9)); 
+		    }
+		  });
+        return false;
+    }
+
+    function statusReturn (valor) {
+    	if(valor == 0) {
+    		return "Desligado";
+    	}
+    	else if(valor == 1) {
+    		return "Ligado";
+    	}
+    	// else { return "Desconhecido";}
+    }
+	
+	function statusONOFF (valor) {
+    	if(valor == 0) {
+    		return "OF";
+    	}
+    	else if(valor == 1) {
+    		return "ON";
+    	}
+    	// else { return "Desconhecido";}
+    }
+
+    var i = 0;
+	function fazerRequisicao(){
+		$('#status').removeClass('label-success').addClass('label-warning');
+		$('#status').text("Enviando Requisição...");
+    	$.ajax({
+		    url: url,
+		    data: { '': ''}, // usaremos em proximas versões
+		    dataType: 'jsonp', // IMPORTANTE
+		    crossDomain: true, // IMPORTANTE
+		    jsonp: false,
+		    jsonpCallback: 'dados', // IMPORTANTE
+		    success: function(data,status,xhr) {
+				//$('#status').removeClass('label-warning').addClass('label-success')
+				//$('#status').text("Requisição Recebida!");
+				//$('#sensor1').text(data.sensor1);
+				//$('#sensor2').text(data.sensor2);
+				$('#temperatura1').text(data.temperatura);
+				$('#00').text(statusReturn(data._pino0));
+				$('#01').text(statusReturn(data._pino1));
+				$('#02').text(statusReturn(data._pino2));
+				$('#03').text(statusReturn(data._pino3));
+				$('#04').text(statusReturn(data._pino4));
+				$('#05').text(statusReturn(data._pino5));
+				$('#06').text(statusReturn(data._pino6));
+				$('#07').text(statusReturn(data._pino7));
+				$('#08').text(statusReturn(data._pino8));
+				$('#09').text(statusReturn(data._pino9));
+				$('#00').attr('value',statusONOFF(data._pino0));
+				$('#01').attr('value',statusONOFF(data._pino1));
+				$('#02').attr('value',statusONOFF(data._pino2));
+				$('#03').attr('value',statusONOFF(data._pino3));
+				$('#04').attr('value',statusONOFF(data._pino4));
+				$('#05').attr('value',statusONOFF(data._pino5));
+				$('#06').attr('value',statusONOFF(data._pino6));
+				$('#07').attr('value',statusONOFF(data._pino7));
+				$('#08').attr('value',statusONOFF(data._pino8));
+				$('#09').attr('value',statusONOFF(data._pino9));
+				console.log();
+				i++;
+				console.log(data);
+		    }
+		  });
+        return false;
+    }
+
+    // A cada 1000 milis (1 segundo), faça uma nova requisição.
+    setInterval(fazerRequisicao, 10000);
+  	// Acredito que 3000 (3 segundos) ou mais seja o ideal para um serviço online.
+  	// Caso use local host, arrisco colocar ate 400 milis, você tera uma boa resposta. 
+});
+  
+</script>
+
+
+</body>
+</html>
+
+
+
+<!--
+<?php
+    //Criando a url para o aquivo json
+    $jsonurl = "http://search.twitter.com/trends.json";
+
+    //Retorna o conteudo do arquivo em formato de string
+    $json = file_get_contents($jsonurl,0,null,null);
+
+    //Decodificando a string e criando o json
+    $json_output = json_decode($json);
+   
+    //Loop para percorrer o json capturando os dados
+    foreach ( $json_output->trends as $trend )
+    {
+        echo '<a href="'.$trend->url.'" target="_blank">'.$trend->name.'</a><br />';
+    }
+?>
+	-->
