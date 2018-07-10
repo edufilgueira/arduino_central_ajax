@@ -34,3 +34,6 @@ http://arduino.esp8266.com/versions/2.4.1/package_esp8266com_index.json
 | AT+CIPSERVER=1,80            | Modo Servidor TCP     | Servidor Criado na Porta 80           |
 | AT+CIPSEND=0,93              | Envio de Informações ao requisitante     | Após requisitar no browser a informação pode ser enviada via Serial Monitor:Enviar no Canal 0(zero) ```<head><meta http-equiv=""refresh"" content=""3""></head><h1><u>ESP8266 - Web Server</u></h1>```            |
 | AT+CIPCLOSE=0                | Encerrar o envio     | Ap
+
+### Pinagem mcu8266 ###
+![esp826612_pinout](https://user-images.githubusercontent.com/37155369/42519887-5e232fbe-843b-11e8-8310-e9d6e01bebc3.jpg)
