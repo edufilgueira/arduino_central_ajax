@@ -5,15 +5,15 @@ const char* password = "******";
 
 WiFiServer server(80);
 
-#define _pino0 D0 //GPIO16
-#define _pino1 D1 //GPIO5
-#define _pino2 D2 //GPIO4
-#define _pino3 D3 //GPIO0
-#define _pino4 D4 //GPIO2
-#define _pino5 D5 //GPIO14
-#define _pino6 D6 //GPIO12
-#define _pino7 D7 //GPIO13
-#define _pino8 D8 //GPIO15
+#define _pino0 16 //GPIO16
+#define _pino1 5  //GPIO5
+#define _pino2 4  //GPIO4
+#define _pino3 0  //GPIO0
+#define _pino4 2  //GPIO2
+#define _pino5 14 //GPIO14
+#define _pino6 12 //GPIO12
+#define _pino7 13 //GPIO13
+#define _pino8 15 //GPIO15
 
 
 void setup()
