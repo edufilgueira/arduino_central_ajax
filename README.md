@@ -31,4 +31,16 @@ http://arduino.esp8266.com/versions/2.4.1/package_esp8266com_index.json
 Configurando Conversor FTDI no ESP8266
 ==============
 
-1 Passo : Identifique os pinos do seu ESP01  e monte conforme as imagens abaixo (Detalhe: Conectar o pino GPIO0 no terra, antes de ligar o FTDI na entrada USB)
+1 Passo: Identifique os pinos do seu ESP01  e monte conforme as imagens abaixo (Detalhe: Conectar o pino GPIO0 no terra, antes de ligar o FTDI na entrada USB)
+![esp8266pinout1](https://user-images.githubusercontent.com/37155369/42705696-8a58958a-86aa-11e8-923a-75a48937cab4.png)
+![sem-titulo-1](https://user-images.githubusercontent.com/37155369/42705701-9138715e-86aa-11e8-95d7-f6673e78fdc5.png)
+
+2 Passo: Conecte o FTDI na porta USB.
+OBS: Em alguns casos, por motivos desconhecidos não é possível subir o código com o GPIO0 conectado ao GND, quando isso acontecer, faça o 1º passo, mas aguarde alguns segundos após conectar o FTDI no USB e retire o GPIO0 do GND.
+
+3 Passo: Instalar a extensão do ESP8266 na IDE do Arduino – de acordo com um dos nossos posts anteriores;
+4 Passo: Agora é só fazer upload do código normalmente;
+5 Passo: Após ter feito upload, desligue o USB, desconecte o GPIO0 do terra, e conecte
+o GPIO2( o que está abaixo do GPIO0) no pino de dados do seu sensor;
+6 Passo: Conecte o FTDI à entrada USB;
+7 Passo: Acompanhe a resposta via serialmonitor.
