@@ -37,7 +37,8 @@ Configurando Conversor FTDI no ESP8266
 ![sem-titulo-1](https://user-images.githubusercontent.com/37155369/42705701-9138715e-86aa-11e8-95d7-f6673e78fdc5.png)
 
 2 Passo: Conecte o FTDI na porta USB.
-OBS: Em alguns casos, por motivos desconhecidos não é possível subir o código com o GPIO0 conectado ao GND, quando isso acontecer, faça o 1º passo, mas aguarde alguns segundos após conectar o FTDI no USB e retire o GPIO0 do GND.
+
+_OBS: Em alguns casos, por motivos desconhecidos não é possível subir o código com o GPIO0 conectado ao GND, quando isso acontecer, faça o 1º passo, mas aguarde alguns segundos após conectar o FTDI no USB e retire o GPIO0 do GND._
 
 3 Passo: Instalar a extensão do ESP8266 na IDE do Arduino – de acordo com um dos nossos posts anteriores;
 
