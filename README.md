@@ -1,13 +1,3 @@
-Arduino Ethernet com Ajax
-==============
-
-Arduino recebendo uma requisição AJAX e retornando um json.
-
-
-Download de todos os arquivos: https://github.com/rogerin/ArduinoComAjax/archive/master.zip
-
-
-
 Arduino Wifi ESP8266 com Ajax
 ==============
 
@@ -37,3 +27,8 @@ http://arduino.esp8266.com/versions/2.4.1/package_esp8266com_index.json
 
 ### Pinagem mcu8266 ###
 ![esp826612_pinout](https://user-images.githubusercontent.com/37155369/42519887-5e232fbe-843b-11e8-8310-e9d6e01bebc3.jpg)
+
+Configurando Conversor FTDI no ESP8266
+==============
+
+1 Passo : Identifique os pinos do seu ESP01  e monte conforme as imagens abaixo (Detalhe: Conectar o pino GPIO0 no terra, antes de ligar o FTDI na entrada USB)
