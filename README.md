@@ -32,6 +32,7 @@ Configurando Conversor FTDI no ESP8266
 ==============
 
 1 Passo: Identifique os pinos do seu ESP01  e monte conforme as imagens abaixo (Detalhe: Conectar o pino GPIO0 no terra, antes de ligar o FTDI na entrada USB)
+
 ![esp8266pinout1](https://user-images.githubusercontent.com/37155369/42705696-8a58958a-86aa-11e8-923a-75a48937cab4.png)
 ![sem-titulo-1](https://user-images.githubusercontent.com/37155369/42705701-9138715e-86aa-11e8-95d7-f6673e78fdc5.png)
 
