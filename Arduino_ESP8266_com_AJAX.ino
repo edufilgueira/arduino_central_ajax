@@ -1,3 +1,6 @@
+//Lista todos IPs da rede
+//arp -a
+
 #include <ESP8266WiFi.h>
 
 const char* ssid = "eduardo";
