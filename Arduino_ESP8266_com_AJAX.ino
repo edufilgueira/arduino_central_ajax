@@ -1,6 +1,3 @@
-//Lista todos IPs da rede
-//arp -a
-
 #include <ESP8266WiFi.h>
 
 const char* ssid = "eduardo";
@@ -21,7 +18,7 @@ WiFiServer server(80);
 
 void setup()
 {
- int counter = 0;
+    int counter = 0;
     while( true ) {
         WiFi.disconnect( true );
         delay(500);
@@ -63,7 +60,7 @@ void setup()
     pinMode(_pino7, OUTPUT);
     pinMode(_pino8, OUTPUT);
   
-    digitalWrite(_pino0, LOW);
+    digitalWrite(_pino0, HIGH);
     digitalWrite(_pino1, HIGH);
     digitalWrite(_pino2, HIGH);
     digitalWrite(_pino3, HIGH);
@@ -88,12 +85,10 @@ void loop()
   String linha = "";        
 
   while (client.connected()) {
-            if (client.available()) { 
-                char c = client.read(); 
-                linha.concat(c); 
-                client.println("url: "+c);
-
-                if (c == '\n' && continua )
+    if (client.available()) { 
+        char c = client.read(); 
+        linha.concat(c); 
+    if (c == '\n' && continua )
     { 
       client.println("HTTP/1.1 200 OK");
       client.println("Content-Type: text/javascript");
@@ -135,16 +130,25 @@ void loop()
         else if ( acao == "08OF"){ digitalWrite(_pino8, HIGH);}
             
         client.print("dados({");
-        client.print("  _pino0 : " + digitalRead(_pino0));
-        client.print(", _pino1 : " + digitalRead(_pino1));
-        client.print(", _pino2 : " + digitalRead(_pino2));
-        client.print(", _pino3 : " + digitalRead(_pino3));
-        client.print(", _pino4 : " + digitalRead(_pino4));
-        client.print(", _pino5 : " + digitalRead(_pino5));
-        client.print(", _pino6 : " + digitalRead(_pino6));
-        client.print(", _pino7 : " + digitalRead(_pino7));
-        client.print(", _pino8 : " + digitalRead(_pino8));
-        client.print(" })");
+        client.print(", _pino0 : ");
+        client.print(digitalRead(_pino0));
+        client.print(", _pino1 : ");
+        client.print(digitalRead(_pino1));
+        client.print(", _pino2 : ");
+        client.print(digitalRead(_pino2));
+        client.print(", _pino3 : ");
+        client.print(digitalRead(_pino3));
+        client.print(", _pino4 : ");
+        client.print(digitalRead(_pino4));
+        client.print(", _pino5 : ");
+        client.print(digitalRead(_pino5));
+        client.print(", _pino6 : ");
+        client.print(digitalRead(_pino6));
+        client.print(", _pino7 : ");
+        client.print(digitalRead(_pino7));
+        client.print(", _pino8 : ");
+        client.print(digitalRead(_pino8));
+        client.print("})");
      }          
       break;
     }
