@@ -2,29 +2,43 @@ body,
 html {
   font-family: 'Lato', monospace;
   font-size: calc(1rem + 1vw);
-  background: #121317
+  background: #131319
 }
 
-#div1{
-    width:3em;
-    height:3em;
-    border:solid 1px;
-    border-radius:5px;
+.port{
+    width:4em;
+    height:6em;
+    border-radius:2px;
     border-color: #fff;
+	background: #28292d;
+	margin-left: 5px;
+	margin-top:5px;
+	-moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .1),  inset -2px -2px 2px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .1), inset -2px -2px 2px rgba(0, 0, 0, .1);
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .1), inset -2px -2px 2px rgba(0, 0, 0, .2);
+	float: left;
   }
-
+.titulo{
+    color: #FFF;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 8px;
+	opacity: 0.4;
+}
 .label__checkbox {
   display: none;
 }
 .label__check {
   display: inline-block;
   border-radius: 50%;
-  border: 5px solid rgba(0, 0, 0, 0.1);
-  background: white;
+  border: 6px inset rgba(255, 255, 255, 0.3);
+  /* background: rgba(144, 14, 14, 0.9); */
   vertical-align: middle;
   margin-right: 20px;
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,19 +53,21 @@ html {
   transition: border .3s ease;
 }
 .label__check i.icon {
-  opacity: 0.2;
+  opacity: 0.8;
   font-size: 36px;
   color: transparent;
   -webkit-transition: opacity .3s .1s ease;
   transition: opacity .3s .1s ease;
-  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.9);
 }
 .label__check:hover {
-  border: 5px solid rgba(0, 0, 0, 0.2);
+  border: 6px inset rgba(255, 255, 255, 0.3)
 }
 .label__checkbox:checked + .label__text .label__check {
   -webkit-animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 1 forwards;
           animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 1 forwards;
+  color: white;
+    font-weight: bold;
 }
 .label__checkbox:checked + .label__text .label__check .icon {
   opacity: 1;
@@ -63,11 +79,13 @@ html {
           animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
 }
 .center {
-  position: absolute;
-  top: vh50;
-  left: vw50;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, -50%);
+  position: relative;
+  top: 10%;
+  left: 15%;
+  width: 3em;
+  /*border: 1px solid #FFF;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);*/
 }
 @-webkit-keyframes icon {
   from {
@@ -95,34 +113,34 @@ html {
 }
 @-webkit-keyframes check {
   0% {
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
     border-width: 5px;
   }
   10% {
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
     opacity: 0.1;
     background: rgba(0, 0, 0, 0.2);
     border-width: 15px;
   }
   12% {
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
     opacity: 0.4;
     background: rgba(0, 0, 0, 0.1);
     border-width: 0;
   }
   50% {
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     background: #00d478;
     border: 0;
     opacity: 0.6;
   }
   100% {
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     background: #00d478;
     border: 0;
     opacity: 1;
@@ -130,34 +148,34 @@ html {
 }
 @keyframes check {
   0% {
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
     border-width: 5px;
   }
   10% {
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
     opacity: 0.1;
     background: rgba(0, 0, 0, 0.2);
     border-width: 15px;
   }
   12% {
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
     opacity: 0.4;
     background: rgba(0, 0, 0, 0.1);
     border-width: 0;
   }
   50% {
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     background: #00d478;
     border: 0;
     opacity: 0.6;
   }
   100% {
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     background: #00d478;
     border: 0;
     opacity: 1;
