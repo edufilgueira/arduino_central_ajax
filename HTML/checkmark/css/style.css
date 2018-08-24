@@ -33,10 +33,10 @@ hr{
     height:5.4em;
     border-radius:2px;
     border-color: #fff;
-	background: #28292d;
-	margin-left: 6px;
-	margin-top:6px;
-	-moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .1),  inset -2px -2px 2px rgba(0, 0, 0, .1);
+    background: #28292d;
+    margin-left: 6px;
+    margin-top:6px;
+    -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .1),  inset -2px -2px 2px rgba(0, 0, 0, .1);
     -webkit-box-shadow: inset 1px 0px 1px rgba(255, 255, 255, .1), inset -2px -2px 2px rgba(0, 0, 0, .1);
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .1), inset -2px -2px 2px rgba(0, 0, 0, .2);
 	float: left;
@@ -76,6 +76,7 @@ hr{
           justify-content: center;
   -webkit-transition: border .3s ease;
   transition: border .3s ease;
+  padding-top: 3px;
 }
 .label__check i.icon {
   opacity: 0.8;

@@ -272,23 +272,11 @@ $(document).ready(function(){
 
 function ajustar_video()
 {
-	//pixel redutor
-    var winW = $(window).width();//screen.width
-	//alert(winW);
+    var winW = $(window).width();
     var divPort = $(".port");
     divPort.css('width', (winW/4)-7);
-	
-	
-	var divCenter = $(".center");
-	
-	divCenter.css('left', (((winW/18)*0.5)-1)+"%");
-	//alert(winW + " | "+winW/4)
-	//alert( $(".center").css("width") );
-	
-	//alert(((winW/4)*0.26)-10);
-		
-
-
+    var divCenter = $(".center");
+    divCenter.css('left', (((winW/18)*0.5)-1)+"%");
 }
 
 ajustar_video();
@@ -298,11 +286,6 @@ $(function(){
 		 ajustar_video();
     });
 });
-//alert(screen.height);
-//alert($(window).height());
-
-
-
 
 </script>
 </body>
