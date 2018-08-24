@@ -6,6 +6,28 @@ html {
   background: #131319
 }
 
+h1{
+	font-size: 19px;
+    color: white;
+    text-transform: uppercase;
+    margin: 25px 6px -17px 6px;
+    text-align: center;
+	opacity: 0.9;
+}
+hr{
+    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #171719, #585858, #171719);
+	margin-bottom: 10px;
+}
+
+.icoimg{
+    margin: -28px 9px -26px -16px;
+    width: 55px;
+    border: 3px solid #FFF;
+    border-radius: 50%;	
+}
 .port{
     width:4em;
     height:5.4em;
