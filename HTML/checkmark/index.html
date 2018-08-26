@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.css"/>
   <script src="bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <title>Central Inteligence</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="img/icon.png" rel="icon" type="image/png" />
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-green">
-  <a class="navbar-brand" href="#"><img src="img/lightbulb.png" class="icoimg"/>CENTRAL CN</a>
+  <a class="navbar-brand" href="#"><img src="img/icon.png" class="icoimg"/>CENTRAL CN</a>
   <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>-->
@@ -51,13 +52,27 @@
 <h1>Grupo Arcondicionado Direita</h1>
 <hr>
 <div class="port">
+<span class="titulo">Arme00</span>
+  <div class="center">
+    <label class="label">
+      <input id="C00" class="label__checkbox" type="checkbox" />
+        <span class="label__text">
+          <a class="label__check botaoEnvia" id="00" value="ON" style="color: white;font-weight: bold;">
+			OFF
+          </a>
+      </span>
+    </label>
+  </div>
+</div>
+
+<div class="port">
 <span class="titulo">Arme01</span>
   <div class="center">
     <label class="label">
-      <input  class="label__checkbox" type="checkbox" checked />
+      <input id="C01" class="label__checkbox" type="checkbox" />
         <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
-			<i class="fa fa-check icon"></i>
+          <a class="label__check botaoEnvia" id="01" value="ON" style="color: white;font-weight: bold;">
+			OFF
           </a>
       </span>
     </label>
@@ -68,9 +83,9 @@
 <span class="titulo">Arme02</span>
   <div class="center">
     <label class="label">
-      <input  class="label__checkbox" type="checkbox" />
+      <input id="C02" class="label__checkbox" type="checkbox" />
         <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
+          <a class="label__check botaoEnvia" id="02" value="ON" style="color: white;font-weight: bold;">
 			OFF
           </a>
       </span>
@@ -82,10 +97,10 @@
 <span class="titulo">Arme03</span>
   <div class="center">
     <label class="label">
-      <input  class="label__checkbox" type="checkbox" checked />
+      <input id="C03" class="label__checkbox" type="checkbox" />
         <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
-			<i class="fa fa-check icon"></i>
+          <a class="label__check botaoEnvia" id="03" value="ON" style="color: white;font-weight: bold;">
+			OFF
           </a>
       </span>
     </label>
@@ -96,9 +111,9 @@
 <span class="titulo">Arme04</span>
   <div class="center">
     <label class="label">
-      <input  class="label__checkbox" type="checkbox" />
+      <input id="C04" class="label__checkbox" type="checkbox" />
         <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
+          <a class="label__check botaoEnvia" id="04" value="ON" style="color: white;font-weight: bold;">
 			OFF
           </a>
       </span>
@@ -110,10 +125,10 @@
 <span class="titulo">Arme05</span>
   <div class="center">
     <label class="label">
-      <input  class="label__checkbox" type="checkbox" checked />
+      <input id="C05" class="label__checkbox" type="checkbox" />
         <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
-			<i class="fa fa-check icon"></i>
+          <a class="label__check botaoEnvia" id="05" value="ON" style="color: white;font-weight: bold;">
+			OFF
           </a>
       </span>
     </label>
@@ -124,35 +139,25 @@
 <span class="titulo">Arme06</span>
   <div class="center">
     <label class="label">
-      <input  class="label__checkbox" type="checkbox" checked />
+      <input id="C06" class="label__checkbox" type="checkbox" />
         <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
-			<i class="fa fa-check icon"></i>
+          <a class="label__check botaoEnvia" id="06" value="ON" style="color: white;font-weight: bold;">
+			OFF
           </a>
       </span>
     </label>
   </div>
 </div>
 
-<div class="port">
-<span class="titulo">Arme07</span>
-  <div class="center">
-    <label class="label">
-      <input  class="label__checkbox" type="checkbox" checked />
-        <span class="label__text">
-          <a class="label__check botaoEnvia cor" id="08" value="ON" style="color: white;font-weight: bold;">
-			<i class="fa fa-check icon"></i>
-          </a>
-      </span>
-    </label>
-  </div>
-</div>
+
+
+
+
 </div>
 
 
 <script type="text/javascript">
-//var url = 'http://177.177.165.14:50';
-var url = 'http://192.168.0.20:1000';
+var url = 'http://192.168.0.99';
 
 
 $(document).ready(function(){
@@ -164,12 +169,12 @@ $(document).ready(function(){
 		if(valor == "ON")
 		{
 			$(this).attr('value','OF');
-			$(this).text(statusReturn(pino));
+			$(this).html(statusReturn(pino));
 		}
 		else if(valor == "OF")
 		{
 			$(this).attr('value','ON');
-			$(this).text(statusReturn(pino));
+			$(this).html(statusReturn(pino));
 		}
     });
 	
@@ -183,16 +188,28 @@ $(document).ready(function(){
 		    jsonpCallback: 'dados',
 		    success: function(data,status,xhr) {
 				// posso ler dados e retoranar na pagina para avisar se a luz ta ligada ou desligada.
-				$('#00').text(statusReturn(data._pino0));
-				$('#01').text(statusReturn(data._pino1)); 
-				$('#02').text(statusReturn(data._pino2));
-				$('#03').text(statusReturn(data._pino3)); 
-				$('#04').text(statusReturn(data._pino4)); 
-				$('#05').text(statusReturn(data._pino5)); 
-				$('#06').text(statusReturn(data._pino6)); 
-				$('#07').text(statusReturn(data._pino7)); 
-				$('#08').text(statusReturn(data._pino8)); 
-				$('#09').text(statusReturn(data._pino9)); 
+				$('#00').html(statusReturn(data._pino0));
+				$('#01').html(statusReturn(data._pino1));
+				$('#02').html(statusReturn(data._pino2));
+				$('#03').html(statusReturn(data._pino3));
+				$('#04').html(statusReturn(data._pino4));
+				$('#05').html(statusReturn(data._pino5));
+				$('#06').html(statusReturn(data._pino6));
+				$('#00').attr('value',statusONOFF(data._pino0));
+				$('#01').attr('value',statusONOFF(data._pino1));
+				$('#02').attr('value',statusONOFF(data._pino2));
+				$('#03').attr('value',statusONOFF(data._pino3));
+				$('#04').attr('value',statusONOFF(data._pino4));
+				$('#05').attr('value',statusONOFF(data._pino5));
+				$('#06').attr('value',statusONOFF(data._pino6));
+				$('#C00').prop("checked", verificarChecked(data._pino0));
+				$('#C01').prop("checked", verificarChecked(data._pino1));
+				$('#C02').prop("checked", verificarChecked(data._pino2));
+				$('#C03').prop("checked", verificarChecked(data._pino3));
+				$('#C04').prop("checked", verificarChecked(data._pino4));
+				$('#C05').prop("checked", verificarChecked(data._pino5));
+				$('#C06').prop("checked", verificarChecked(data._pino6));
+
 		    }
 		  });
         return false;
@@ -200,10 +217,10 @@ $(document).ready(function(){
 
     function statusReturn (valor) {
     	if(valor == 0) {
-    		return "Desligado";
+    		return '<i class="fa fa-check icon"></i>';
     	}
     	else if(valor == 1) {
-    		return "Ligado";
+    		return "OFF";
     	}
     	// else { return "Desconhecido";}
     }
@@ -215,13 +232,19 @@ $(document).ready(function(){
     	else if(valor == 1) {
     		return "ON";
     	}
-    	// else { return "Desconhecido";}
+    }
+	
+	function verificarChecked (valor) {
+    	if(valor == 0) {
+    		return true;
+    	}
+    	else if(valor == 1) {
+    		return false;
+    	}
     }
 
-    var i = 0;
+
 	function fazerRequisicao(){
-		$('#status').removeClass('label-success').addClass('label-warning');
-		$('#status').text("Enviando Requisição...");
     	$.ajax({
 		    url: url,
 		    data: { '': ''}, // usaremos em proximas versões
@@ -230,21 +253,15 @@ $(document).ready(function(){
 		    jsonp: false,
 		    jsonpCallback: 'dados', // IMPORTANTE
 		    success: function(data,status,xhr) {
-				//$('#status').removeClass('label-warning').addClass('label-success')
-				//$('#status').text("Requisição Recebida!");
-				//$('#sensor1').text(data.sensor1);
-				//$('#sensor2').text(data.sensor2);
-				$('#temperatura1').text(data.temperatura);
-				$('#00').text(statusReturn(data._pino0));
-				$('#01').text(statusReturn(data._pino1));
-				$('#02').text(statusReturn(data._pino2));
-				$('#03').text(statusReturn(data._pino3));
-				$('#04').text(statusReturn(data._pino4));
-				$('#05').text(statusReturn(data._pino5));
-				$('#06').text(statusReturn(data._pino6));
-				$('#07').text(statusReturn(data._pino7));
-				$('#08').text(statusReturn(data._pino8));
-				$('#09').text(statusReturn(data._pino9));
+			//console.log(data)
+				//$('#temperatura1').text(data.temperatura);
+				$('#00').html(statusReturn(data._pino0));
+				$('#01').html(statusReturn(data._pino1));
+				$('#02').html(statusReturn(data._pino2));
+				$('#03').html(statusReturn(data._pino3));
+				$('#04').html(statusReturn(data._pino4));
+				$('#05').html(statusReturn(data._pino5));
+				$('#06').html(statusReturn(data._pino6));
 				$('#00').attr('value',statusONOFF(data._pino0));
 				$('#01').attr('value',statusONOFF(data._pino1));
 				$('#02').attr('value',statusONOFF(data._pino2));
@@ -252,19 +269,27 @@ $(document).ready(function(){
 				$('#04').attr('value',statusONOFF(data._pino4));
 				$('#05').attr('value',statusONOFF(data._pino5));
 				$('#06').attr('value',statusONOFF(data._pino6));
-				$('#07').attr('value',statusONOFF(data._pino7));
-				$('#08').attr('value',statusONOFF(data._pino8));
-				$('#09').attr('value',statusONOFF(data._pino9));
-				console.log();
-				i++;
-				console.log(data);
+				$('#C00').prop("checked", verificarChecked(data._pino0));
+				$('#C01').prop("checked", verificarChecked(data._pino1));
+				$('#C02').prop("checked", verificarChecked(data._pino2));
+				$('#C03').prop("checked", verificarChecked(data._pino3));
+				
+				console.log($('#04').attr('value') + " - " + statusONOFF(data._pino4));
+				console.log($('#C04').prop('checked') + " - " + verificarChecked(data._pino4));
+				
+				
+				
+					$('#C04').prop("checked", verificarChecked(data._pino4));
+				
+				$('#C05').prop("checked", verificarChecked(data._pino5));
+				$('#C06').prop("checked", verificarChecked(data._pino6));
 		    }
 		  });
         return false;
     }
 
     // A cada 1000 milis (1 segundo), faça uma nova requisição.
-    setInterval(fazerRequisicao, 10000);
+    setInterval(fazerRequisicao, 1000);
   	// Acredito que 3000 (3 segundos) ou mais seja o ideal para um serviço online.
   	// Caso use local host, arrisco colocar ate 400 milis, você tera uma boa resposta. 
 });

@@ -25,7 +25,7 @@ hr{
 .icoimg{
     margin: -28px 9px -26px -16px;
     width: 55px;
-    border: 3px solid #FFF;
+    /*border: 3px solid #FFF;*/
     border-radius: 50%;	
 }
 .port{
@@ -97,8 +97,8 @@ hr{
 }
 .label__checkbox:checked + .label__text .label__check .icon {
   opacity: 1;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   color: white;
   -webkit-text-stroke: 0;
   -webkit-animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
@@ -113,7 +113,7 @@ hr{
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);*/
 }
-@-webkit-keyframes icon {
+/*@-webkit-keyframes icon {
   from {
     opacity: 0;
     -webkit-transform: scale(0.5);
@@ -136,7 +136,7 @@ hr{
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-}
+}*/
 @-webkit-keyframes check {
   0% {
     width: 3em;
