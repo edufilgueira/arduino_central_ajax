@@ -287,9 +287,9 @@ $(document).ready(function(){
 		  });
         return false;
     }
-
+	fazerRequisicao();
     // A cada 1000 milis (1 segundo), faça uma nova requisição.
-    setInterval(fazerRequisicao, 1000);
+    setInterval(fazerRequisicao, 4000);
   	// Acredito que 3000 (3 segundos) ou mais seja o ideal para um serviço online.
   	// Caso use local host, arrisco colocar ate 400 milis, você tera uma boa resposta. 
 });
