@@ -28,6 +28,9 @@ http://arduino.esp8266.com/versions/2.4.1/package_esp8266com_index.json
 ### Pinagem mcu8266 ###
 ![esp826612_pinout](https://user-images.githubusercontent.com/37155369/42519887-5e232fbe-843b-11e8-8310-e9d6e01bebc3.jpg)
 
+### Pinagem módulo Relé 8 ###
+![sketch](https://user-images.githubusercontent.com/37155369/44753740-89c68b80-aaf5-11e8-9cdf-a5c01c97b05d.png)
+
 Configurando Conversor FTDI no ESP8266
 ==============
 
