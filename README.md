@@ -52,5 +52,6 @@ _OBS: Em alguns casos, por motivos desconhecidos não é possível subir o códi
 6 Passo: Conecte o FTDI à entrada USB;
 
 7 Passo: Acompanhe a resposta via serialmonitor.
-cn@2018#
-ALCANCE TEMPLO
+
+### Configurando o raspberry como servidor ###
+https://www.dobitaobyte.com.br/configurar-um-servidor-ntp-no-raspberry-pi/
