@@ -59,54 +59,51 @@ https://www.dobitaobyte.com.br/configurar-um-servidor-ntp-no-raspberry-pi/
 #### Instalando o servidor NTP ####
 É fácil demais. Simplesmente abra um terminal e digite:
 
-'''
+```
 sudo apt-get install ntp ntpdate
-'''
+```
 
-sudo apt-get install ntp ntpdate
 Após isso, edite o arquivo /etc/ntp.conf. Adicione essa linha ao final do arquivo:
 
+```
+server 192.168.1.10 prefer
+```
 
-server 192.168.1.10 prefer
-1
-server 192.168.1.10 prefer
 Esse IP deve ser o mesmo do seu Raspberry Pi. Seu Raspberry Pi deve ter IP fixo. Para isso, a maneira mais simples é configurar seu servidor DHCP para atribuir sempre o mesmo IP ao Raspberry. Basta configurá-lo em seu roteador, pegando o endereço MAC através do comando ifconfig.
 
 Enfim, após salvar o arquivo você deverá reiniciar o serviço:
 
+```
+sudo service ntp restart
+```
 
-sudo service ntp restart
-1
-sudo service ntp restart
 Apenas ajustar a hora do Raspberry
 A primeira coisa que você precisa fazer é garantir que seu timezone está configurado corretamente.
 
-Configurar timezone
+#### Configurar timezone ####
 Para configurar seu timezone, execute o comando:
 
+```
+sudo dpkg-reconfigure tzdata
+```
 
-sudo dpkg-reconfigure tzdata
-1
-sudo dpkg-reconfigure tzdata
 Selecione America no menu que se abre e procure o timezone da sua região. Quando terminar essa configuração, podemos ir para o próximo passo.
 
-Ajustar a data/hora
+
+#### Ajustar a data/hora ####
 Se você instalar apenas o ntpdate, já pode fazer consultas e ajustes externamente à sua rede. Basta executar o comando:
 
+```
+/usr/sbin/ntpdate -q ntp.ubuntu.com
+```
 
-/usr/sbin/ntpdate -q ntp.ubuntu.com
-1
-/usr/sbin/ntpdate -q ntp.ubuntu.com
 Mas com seu servidor devidamente configurado, você pode consultar o próprio Raspberry. Tendo já configurado seu servidor NTP e feito o primeiro ajuste de hora conforme a linha de comando anterior, seu DNS já pode ser iniciado:
 
-
+```
 sudo service bind9 start
-1
-sudo service bind9 start
-E então a consulta a ele próprio:
-
-
+```
+```
 sudo ntpdate -q ns1
-1
-sudo ntpdate -q ns1
+```
+
 Lembrando que ns1 é o nome que eu dei para o meu servidor DNS, que não precisa ser o hostname (e talvez nem deva).
