@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "@2018#cn";
-const char* password = "ALCANCE TEMPLO";
+const char* ssid = "ALCANCE TEMPLO";
+const char* password = "@2018#cn";
 
 WiFiServer server(80);
 
@@ -135,9 +135,10 @@ void loop()
       
         else if ( acao == "08ON"){ digitalWrite(_pino8, LOW); }
         else if ( acao == "08OF"){ digitalWrite(_pino8, HIGH);}
+
         
-        client.print("dados({");
-        client.print(", _pino0 : ");
+        client.print("dados({ ");
+        client.print(" _pino0 : ");
         client.print(digitalRead(_pino0));
         client.print(", _pino1 : ");
         client.print(digitalRead(_pino1));
@@ -171,7 +172,7 @@ void loop()
 
 
 int verifica_temperatura(byte pinLeituraDoSensor) {
-  float voltage = pinLeituraDoSensor * (5.0/1023);
+  float voltage = pinLeituraDoSensor * (3.0/1023);
   int temperatura = voltage * 100;
   return temperatura;
 }
