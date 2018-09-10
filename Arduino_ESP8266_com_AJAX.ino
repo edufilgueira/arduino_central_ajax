@@ -1,10 +1,12 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "eduardo";
-const char* password = "edumel00";
+const char* ssid = "@2018#cn";
+const char* password = "ALCANCE TEMPLO";
 
 WiFiServer server(80);
 
+const int analogPin1 = A0;
+int sensor1 = 0;
 #define _pino0 16 //D0
 #define _pino1 5  //D1
 #define _pino2 4  //D2
@@ -18,6 +20,7 @@ WiFiServer server(80);
 
 void setup()
 {
+    WiFi.persistent(false);
     int counter = 0;
     while( true ) {
         WiFi.disconnect( true );
@@ -33,6 +36,10 @@ void setup()
     Serial.print("Conectando a ");
     Serial.println(ssid);
     WiFi.mode(WIFI_STA);
+    IPAddress ip(192, 168, 0, 99); 
+    IPAddress gateway(192, 168, 0, 1);
+    IPAddress subnet(255, 255, 255, 0);
+    WiFi.config( ip, gateway,subnet );
     WiFi.reconnect();
     WiFi.begin(ssid, password);
 
@@ -76,12 +83,12 @@ String URLValue;
 
 void loop()
 {
-
+    delay(80); 
     WiFiClient  client = server.available();
 
     if (client) {
  
-        boolean continua = true;
+  boolean continua = true;
   String linha = "";        
 
   while (client.connected()) {
@@ -128,7 +135,7 @@ void loop()
       
         else if ( acao == "08ON"){ digitalWrite(_pino8, LOW); }
         else if ( acao == "08OF"){ digitalWrite(_pino8, HIGH);}
-            
+        
         client.print("dados({");
         client.print(", _pino0 : ");
         client.print(digitalRead(_pino0));
@@ -156,7 +163,15 @@ void loop()
                 else if (c != '\r') { continua = false; }
             }
         } 
-        delay(1);     
+        delay(50);     
         client.stop(); 
+        delay(50);
     } 
+}
+
+
+int verifica_temperatura(byte pinLeituraDoSensor) {
+  float voltage = pinLeituraDoSensor * (5.0/1023);
+  int temperatura = voltage * 100;
+  return temperatura;
 }
