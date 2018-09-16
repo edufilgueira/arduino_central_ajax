@@ -71,16 +71,16 @@ void setup()
   pinMode(pinSom, INPUT);
 
   
-  digitalWrite(_pino0, LOW);
-  digitalWrite(_pino1, LOW);
-  digitalWrite(_pino2, LOW);
-  digitalWrite(_pino3, LOW);
-  digitalWrite(_pino4, LOW);
-  digitalWrite(_pino5, LOW);
-  digitalWrite(_pino6, LOW);
-  digitalWrite(_pino7, LOW);
-  digitalWrite(_pino8, LOW);
-  digitalWrite(pinSom, LOW);
+  digitalWrite(_pino0, HIGH);
+  digitalWrite(_pino1, HIGH);
+  digitalWrite(_pino2, HIGH);
+  digitalWrite(_pino3, HIGH);
+  digitalWrite(_pino4, HIGH);
+  digitalWrite(_pino5, HIGH);
+  digitalWrite(_pino6, HIGH);
+  digitalWrite(_pino7, HIGH);
+  digitalWrite(_pino8, HIGH);
+  digitalWrite(pinSom, HIGH);
 }
 
 void loop()
